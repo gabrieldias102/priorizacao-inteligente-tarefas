@@ -1,11 +1,9 @@
-:root {
-  font-family: system-ui, sans-serif;
-  color: #1f2328;
-  background: #ffffff;
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 32px 16px;
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
 }

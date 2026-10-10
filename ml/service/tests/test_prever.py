@@ -42,7 +42,7 @@ def test_fatores_explicam_a_sugestao():
     assert fatores[0]["atributo"] == "dias_ate_prazo"
     assert fatores[0]["peso"] > 0
     descricoes = {f["atributo"]: f["descricao"] for f in fatores}
-    assert descricoes["dias_ate_prazo"] == "Prazo vence hoje"
+    assert descricoes["dias_ate_prazo"] == "Prazo em menos de 1 dia"
     assert descricoes["impacto"] == "Impacto 5 de 5"
     assert descricoes["esforco_estimado"] == "Esforço de 1 h"
     pesos = [abs(f["peso"]) for f in fatores]

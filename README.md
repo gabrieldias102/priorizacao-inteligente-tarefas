@@ -39,6 +39,14 @@ cd api && pip install -r requirements-dev.txt && uvicorn app.main:app --port 800
 cd web && npm install && npm run dev
 ```
 
+## Interface
+
+Depois de criar a conta, cada tarefa nova recebe uma sugestão de prioridade do modelo. O usuário aceita ou ajusta para outra prioridade, pode ver os atributos que mais pesaram na sugestão ("Por que essa prioridade?") e dizer se a sugestão ajudou. A lista vem ordenada pela prioridade e pelo prazo, com filtros por status, categoria e prioridade.
+
+![Sugestão com os motivos](docs/telas/sugestao-e-motivos.png)
+
+Mais telas em [`docs/telas/`](docs/telas/). No modo de desenvolvimento, o Vite repassa `/api` para a API em `http://localhost:8000` (mude com `API_PROXY_TARGET`).
+
 ## API
 
 A documentação interativa fica em http://localhost:8000/docs. Rotas principais:

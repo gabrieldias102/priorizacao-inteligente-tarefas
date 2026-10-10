@@ -22,7 +22,7 @@ class Settings(BaseSettings):
 def descrever(atributo: str, valor) -> str:
     if atributo == "dias_ate_prazo":
         if valor == 0:
-            return "Prazo vence hoje"
+            return "Prazo em menos de 1 dia"
         return f"Prazo em {valor} dia" + ("s" if valor != 1 else "")
     if atributo == "impacto":
         return f"Impacto {valor} de 5"
