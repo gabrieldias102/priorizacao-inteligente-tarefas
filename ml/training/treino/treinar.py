@@ -73,6 +73,14 @@ def importancia_atributos(modelo) -> dict[str, float]:
     return {nome.split("__", 1)[1]: round(float(v), 4) for nome, v in pares}
 
 
+TAMANHO_FUNDO = 100
+
+
+def salvar_fundo(tarefas: pd.DataFrame, caminho: Path, semente: int) -> None:
+    """Amostra da base usada pelo serviço de ML para explicar cada previsão (valores de Shapley)."""
+    tarefas[ATRIBUTOS].sample(TAMANHO_FUNDO, random_state=semente).to_csv(caminho, index=False)
+
+
 def treinar(
     n: int, semente: int, versao: str, dir_modelos: Path, dir_resultados: Path, csv: Path | None
 ) -> dict:
@@ -137,6 +145,7 @@ def treinar(
         "parametros": resultados["modelos"][escolhido]["melhores_parametros"],
     }
     joblib.dump(melhores[escolhido], dir_modelos / f"modelo-{versao}.joblib", compress=3)
+    salvar_fundo(treino, dir_modelos / f"modelo-{versao}-fundo.csv", semente)
     (dir_modelos / f"modelo-{versao}.json").write_text(
         json.dumps(metadados, ensure_ascii=False, indent=2) + "\n"
     )

@@ -15,7 +15,7 @@ def test_criar_tarefa(cliente, auth):
     tarefa = criar(cliente, auth, descricao="Versão final")
     assert tarefa["titulo"] == "Entregar relatório"
     assert tarefa["status"] == "aberta"
-    assert tarefa["prioridade_sugerida"] is None
+    assert tarefa["prioridade_sugerida"] == "alta"
     assert tarefa["prioridade_confirmada"] is None
 
 
@@ -29,7 +29,8 @@ def test_atributos_fora_da_faixa_sao_recusados(cliente, auth):
         assert cliente.post("/tarefas", json={**TAREFA, **campos}, headers=auth).status_code == 422
 
 
-def test_lista_ordena_por_prioridade_e_depois_prazo(cliente, auth):
+def test_lista_ordena_por_prioridade_e_depois_prazo(cliente, auth, ml_falso):
+    ml_falso.no_ar = False
     amanha = (datetime.now(UTC) + timedelta(days=1)).isoformat()
     semana = (datetime.now(UTC) + timedelta(days=7)).isoformat()
     baixa = criar(cliente, auth, titulo="baixa", prazo=amanha)
@@ -45,7 +46,8 @@ def test_lista_ordena_por_prioridade_e_depois_prazo(cliente, auth):
     assert titulos == ["alta perto", "alta longe", "baixa", sem_prioridade["titulo"]]
 
 
-def test_filtros(cliente, auth):
+def test_filtros(cliente, auth, ml_falso):
+    ml_falso.no_ar = False
     estudo = criar(cliente, auth, categoria="estudo")
     criar(cliente, auth, categoria="casa")
     cliente.patch(f"/tarefas/{estudo['id']}", json={"status": "em_andamento"}, headers=auth)
@@ -122,7 +124,10 @@ def adicionar_sugestao(sessao_fabrica, tarefa_id, prioridade):
         sessao.commit()
 
 
-def test_aceitar_e_ajustar_sugestao_entram_nas_estatisticas(cliente, auth, sessao_fabrica):
+def test_aceitar_e_ajustar_sugestao_entram_nas_estatisticas(
+    cliente, auth, sessao_fabrica, ml_falso
+):
+    ml_falso.no_ar = False
     aceita = criar(cliente, auth)
     ajustada = criar(cliente, auth)
     adicionar_sugestao(sessao_fabrica, aceita["id"], "alta")
@@ -142,14 +147,16 @@ def test_aceitar_e_ajustar_sugestao_entram_nas_estatisticas(cliente, auth, sessa
     assert stats["por_prioridade"] == {"baixa": 1, "media": 0, "alta": 1}
 
 
-def test_estatisticas_sem_sugestoes(cliente, auth):
+def test_estatisticas_sem_sugestoes(cliente, auth, ml_falso):
+    ml_falso.no_ar = False
     criar(cliente, auth)
     stats = cliente.get("/estatisticas", headers=auth).json()
     assert stats["taxa_aceitacao"] is None
     assert stats["por_status"]["aberta"] == 1
 
 
-def test_avaliar_sugestao(cliente, auth, sessao_fabrica):
+def test_avaliar_sugestao(cliente, auth, sessao_fabrica, ml_falso):
+    ml_falso.no_ar = False
     tarefa = criar(cliente, auth)
     url = f"/tarefas/{tarefa['id']}/avaliacao"
     assert cliente.post(url, json={"util": True}, headers=auth).status_code == 409

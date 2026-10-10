@@ -2,9 +2,10 @@ import uuid
 from datetime import UTC, datetime
 from typing import Annotated
 
-from fastapi import APIRouter, HTTPException, Query, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
 from sqlalchemy import select
 
+from app import ml
 from app.esquemas import (
     AvaliacaoSugestao,
     Categoria,
@@ -18,6 +19,8 @@ from app.esquemas import (
 )
 from app.modelos import PRIORIDADES, STATUS, Sugestao, Tarefa
 from app.seguranca import Db, UsuarioAtual
+
+ClienteML = Annotated[ml.ClienteML, Depends(ml.get_ml)]
 
 rotas = APIRouter(tags=["tarefas"])
 
@@ -44,6 +47,26 @@ def buscar(db: Db, usuario: UsuarioAtual, tarefa_id: uuid.UUID) -> Tarefa:
     return tarefa
 
 
+def sugerir(tarefa: Tarefa, cliente: ml.ClienteML) -> bool:
+    """Pede uma sugestão ao modelo e a registra. Devolve False se o modelo não respondeu."""
+    dados = ml.atributos(tarefa)
+    previsao = cliente.prever(dados)
+    if previsao is None:
+        return False
+    tarefa.sugestoes.append(
+        Sugestao(
+            atributos=dados,
+            prioridade_sugerida=previsao["prioridade"],
+            probabilidades=previsao["probabilidades"],
+            fatores=previsao["fatores"],
+            modelo_versao=previsao["modelo_versao"],
+        )
+    )
+    tarefa.prioridade_sugerida = previsao["prioridade"]
+    tarefa.modelo_versao = previsao["modelo_versao"]
+    return True
+
+
 @rotas.get("/tarefas")
 def listar(
     usuario: UsuarioAtual,
@@ -64,10 +87,12 @@ def listar(
 
 
 @rotas.post("/tarefas", status_code=status.HTTP_201_CREATED)
-def criar(dados: TarefaCriar, usuario: UsuarioAtual, db: Db) -> TarefaSaida:
-    # A sugestão do modelo entra na fase 3; por enquanto a tarefa nasce sem prioridade.
+def criar(dados: TarefaCriar, usuario: UsuarioAtual, db: Db, cliente: ClienteML) -> TarefaSaida:
+    """Cria a tarefa já com a sugestão do modelo. Se o modelo estiver fora do ar, a
+    tarefa é salva sem sugestão e pode pedir uma depois em /tarefas/{id}/sugestao."""
     tarefa = Tarefa(usuario_id=usuario.id, **dados.model_dump())
     db.add(tarefa)
+    sugerir(tarefa, cliente)
     db.commit()
     return TarefaSaida.model_validate(tarefa)
 
@@ -79,8 +104,13 @@ def detalhar(tarefa_id: uuid.UUID, usuario: UsuarioAtual, db: Db) -> TarefaSaida
 
 @rotas.patch("/tarefas/{tarefa_id}")
 def atualizar(
-    tarefa_id: uuid.UUID, dados: TarefaAtualizar, usuario: UsuarioAtual, db: Db
+    tarefa_id: uuid.UUID,
+    dados: TarefaAtualizar,
+    usuario: UsuarioAtual,
+    db: Db,
+    cliente: ClienteML,
 ) -> TarefaSaida:
+    """Mudar um atributo usado pelo modelo gera nova sugestão e pede nova confirmação."""
     tarefa = buscar(db, usuario, tarefa_id)
     mudancas = dados.model_dump(exclude_unset=True)
     for campo in ("titulo", "categoria", "impacto", "complexidade", "esforco_estimado", "status"):
@@ -90,6 +120,8 @@ def atualizar(
         setattr(tarefa, campo, valor)
     if "status" in mudancas:
         tarefa.concluida_em = datetime.now(UTC) if tarefa.status == "concluida" else None
+    if mudancas.keys() & set(ml.ATRIBUTOS_DO_MODELO) and sugerir(tarefa, cliente):
+        tarefa.prioridade_confirmada = None
     db.commit()
     return TarefaSaida.model_validate(tarefa)
 
@@ -99,6 +131,18 @@ def excluir(tarefa_id: uuid.UUID, usuario: UsuarioAtual, db: Db) -> Response:
     db.delete(buscar(db, usuario, tarefa_id))
     db.commit()
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
+@rotas.post("/tarefas/{tarefa_id}/sugestao")
+def nova_sugestao(
+    tarefa_id: uuid.UUID, usuario: UsuarioAtual, db: Db, cliente: ClienteML
+) -> TarefaSaida:
+    """Pede uma nova sugestão (por exemplo, quando o prazo se aproximou)."""
+    tarefa = buscar(db, usuario, tarefa_id)
+    if not sugerir(tarefa, cliente):
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Modelo indisponível no momento")
+    db.commit()
+    return TarefaSaida.model_validate(tarefa)
 
 
 @rotas.post("/tarefas/{tarefa_id}/prioridade")

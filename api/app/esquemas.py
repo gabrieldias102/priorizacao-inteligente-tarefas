@@ -51,6 +51,25 @@ class TarefaAtualizar(BaseModel):
     status: Status | None = None
 
 
+class Fator(BaseModel):
+    atributo: str
+    valor: float | str
+    descricao: str
+    peso: float
+
+
+class SugestaoSaida(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    prioridade_sugerida: Prioridade
+    probabilidades: dict[str, float] | None
+    fatores: list[Fator] | None
+    modelo_versao: str
+    aceita: bool | None
+    util: bool | None
+    criado_em: datetime
+
+
 class TarefaSaida(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -69,6 +88,7 @@ class TarefaSaida(BaseModel):
     criado_em: datetime
     atualizado_em: datetime
     concluida_em: datetime | None
+    sugestao: SugestaoSaida | None
 
 
 class PrioridadeConfirmar(BaseModel):
