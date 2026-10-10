@@ -15,7 +15,9 @@ services:
       retries: 10
 
   ml:
-    build: ./ml/service
+    build:
+      context: ./ml
+      dockerfile: service/Dockerfile
     ports:
       - "8001:8001"
 

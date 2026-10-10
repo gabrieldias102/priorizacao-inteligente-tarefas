@@ -48,9 +48,12 @@ A documentação interativa fica em http://localhost:8000/docs. Rotas principais
 | `POST /auth/registrar`, `POST /auth/entrar`, `GET /auth/eu` | Conta e token JWT (no login, o e-mail vai em `username`) |
 | `GET /tarefas` | Lista ordenada por prioridade e prazo; filtros `status`, `categoria`, `prioridade` |
 | `POST /tarefas`, `GET/PATCH/DELETE /tarefas/{id}` | Cadastro, consulta, edição e exclusão |
+| `POST /tarefas/{id}/sugestao` | Pede uma nova sugestão ao modelo |
 | `POST /tarefas/{id}/prioridade` | Aceita a sugestão ou ajusta a prioridade |
 | `POST /tarefas/{id}/avaliacao` | Marca a sugestão como útil ou não |
 | `GET /estatisticas` | Totais por status e prioridade e taxa de aceitação das sugestões |
+
+Ao criar uma tarefa, ou ao mudar prazo, categoria, impacto, complexidade ou esforço, a API pede uma sugestão ao serviço de ML (`POST /prever`). A resposta traz a prioridade, as probabilidades de cada classe e os fatores que mais pesaram, calculados como valores de Shapley sobre uma amostra de 100 tarefas da base de treino. Se o serviço de ML estiver fora do ar, a tarefa é salva sem sugestão.
 
 O banco é criado pelas migrações do Alembic (`cd api && alembic upgrade head`); no Docker isso roda sozinho ao subir a API. Para uma nova migração depois de mudar `app/modelos.py`: `alembic revision --autogenerate -m "descrição"`.
 

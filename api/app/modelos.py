@@ -67,6 +67,11 @@ class Tarefa(Base):
         back_populates="tarefa", cascade="all, delete-orphan", order_by="Sugestao.criado_em"
     )
 
+    @property
+    def sugestao(self) -> "Sugestao | None":
+        """A sugestão mais recente do modelo."""
+        return self.sugestoes[-1] if self.sugestoes else None
+
 
 class Sugestao(Base):
     """Cada previsão do modelo, com os atributos do momento em que foi feita."""
@@ -80,6 +85,7 @@ class Sugestao(Base):
     atributos: Mapped[dict] = mapped_column(JSON)
     prioridade_sugerida: Mapped[str] = mapped_column(enum("sugestao_prioridade", PRIORIDADES))
     probabilidades: Mapped[dict | None] = mapped_column(JSON)
+    fatores: Mapped[list | None] = mapped_column(JSON)
     modelo_versao: Mapped[str] = mapped_column(String(40))
     aceita: Mapped[bool | None] = mapped_column(Boolean)
     util: Mapped[bool | None] = mapped_column(Boolean)

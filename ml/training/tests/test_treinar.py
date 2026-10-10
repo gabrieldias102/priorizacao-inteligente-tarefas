@@ -42,3 +42,4 @@ def test_treino_salva_modelo_que_preve_as_tres_classes(tmp_path):
     assert metadados["algoritmo"] == resultados["escolhido"]
     assert len(list((tmp_path / "resultados").glob("matriz-*.png"))) == 3
     assert len(pd.read_csv(tmp_path / "dados.csv")) == 600
+    assert len(pd.read_csv(tmp_path / "modelos" / "modelo-teste-fundo.csv")) == 100

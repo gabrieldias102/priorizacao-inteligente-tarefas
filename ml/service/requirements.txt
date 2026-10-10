@@ -1,2 +1,9 @@
 fastapi==0.115.12
 uvicorn[standard]==0.34.3
+pydantic-settings==2.9.1
+# Mesmas versões do treino (ml/training), para o modelo carregar sem incompatibilidade.
+numpy==2.3.0
+pandas==2.3.0
+scipy==1.15.3
+scikit-learn==1.7.0
+joblib==1.5.1
