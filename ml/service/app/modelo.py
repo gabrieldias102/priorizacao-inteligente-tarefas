@@ -61,7 +61,8 @@ class Modelo:
                 linhas[ATRIBUTOS[i]] = atributos[ATRIBUTOS[i]]
             lotes.append(linhas)
         probs = self.pipeline.predict_proba(pd.concat(lotes, ignore_index=True))[:, indice_classe]
-        valor = dict(zip(self.coalizoes, probs.reshape(len(self.coalizoes), m).mean(axis=1), strict=True))
+        medias = probs.reshape(len(self.coalizoes), m).mean(axis=1)
+        valor = dict(zip(self.coalizoes, medias, strict=True))
 
         resultado = np.zeros(n)
         for coalizao, v in valor.items():
