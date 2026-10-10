@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
+from app.rotas import auth, tarefas
 
 app = FastAPI(title="Priorização Inteligente de Tarefas · API")
 app.add_middleware(
@@ -11,6 +12,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.include_router(auth.rotas)
+app.include_router(tarefas.rotas)
 
 
 async def status_ml() -> str:
