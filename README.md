@@ -39,6 +39,21 @@ cd api && pip install -r requirements-dev.txt && uvicorn app.main:app --port 800
 cd web && npm install && npm run dev
 ```
 
+## API
+
+A documentação interativa fica em http://localhost:8000/docs. Rotas principais:
+
+| Rota | Função |
+| --- | --- |
+| `POST /auth/registrar`, `POST /auth/entrar`, `GET /auth/eu` | Conta e token JWT (no login, o e-mail vai em `username`) |
+| `GET /tarefas` | Lista ordenada por prioridade e prazo; filtros `status`, `categoria`, `prioridade` |
+| `POST /tarefas`, `GET/PATCH/DELETE /tarefas/{id}` | Cadastro, consulta, edição e exclusão |
+| `POST /tarefas/{id}/prioridade` | Aceita a sugestão ou ajusta a prioridade |
+| `POST /tarefas/{id}/avaliacao` | Marca a sugestão como útil ou não |
+| `GET /estatisticas` | Totais por status e prioridade e taxa de aceitação das sugestões |
+
+O banco é criado pelas migrações do Alembic (`cd api && alembic upgrade head`); no Docker isso roda sozinho ao subir a API. Para uma nova migração depois de mudar `app/modelos.py`: `alembic revision --autogenerate -m "descrição"`.
+
 ## Testes e lint
 
 ```bash
