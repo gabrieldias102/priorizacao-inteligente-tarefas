@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        servico: [api, ml/service]
+        servico: [api, ml/service, ml/training]
     defaults:
       run:
         working-directory: ${{ matrix.servico }}

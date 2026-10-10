@@ -1,0 +1,177 @@
+{
+  "linhas_de_base": {
+    "Classe majoritária": {
+      "acuracia": 0.375,
+      "f1_macro": 0.1818,
+      "por_classe": {
+        "baixa": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0
+        },
+        "media": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1-score": 0.5455
+        },
+        "alta": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0
+        }
+      }
+    },
+    "Regra sem ruído": {
+      "acuracia": 0.905,
+      "f1_macro": 0.9062,
+      "por_classe": {
+        "baixa": {
+          "precision": 0.8782,
+          "recall": 0.9454,
+          "f1-score": 0.9105
+        },
+        "media": {
+          "precision": 0.9158,
+          "recall": 0.8222,
+          "f1-score": 0.8665
+        },
+        "alta": {
+          "precision": 0.9204,
+          "recall": 0.9635,
+          "f1-score": 0.9415
+        }
+      }
+    }
+  },
+  "modelos": {
+    "Regressão Logística": {
+      "melhores_parametros": {
+        "C": 10
+      },
+      "f1_macro_validacao": 0.7752,
+      "teste": {
+        "acuracia": 0.7417,
+        "f1_macro": 0.7461,
+        "por_classe": {
+          "baixa": {
+            "precision": 0.7651,
+            "recall": 0.694,
+            "f1-score": 0.7278
+          },
+          "media": {
+            "precision": 0.6516,
+            "recall": 0.7067,
+            "f1-score": 0.678
+          },
+          "alta": {
+            "precision": 0.8368,
+            "recall": 0.8281,
+            "f1-score": 0.8325
+          }
+        }
+      },
+      "importancia_atributos": {
+        "dias_ate_prazo": 0.4761,
+        "impacto": 0.2251,
+        "esforco_estimado": 0.0638,
+        "complexidade": 0.0632,
+        "categoria_saude": 0.0438,
+        "categoria_pessoal": 0.0421,
+        "categoria_casa": 0.0337,
+        "categoria_trabalho": 0.0265,
+        "categoria_estudo": 0.0256
+      }
+    },
+    "Árvore de Decisão": {
+      "melhores_parametros": {
+        "max_depth": null,
+        "min_samples_leaf": 5
+      },
+      "f1_macro_validacao": 0.851,
+      "teste": {
+        "acuracia": 0.8533,
+        "f1_macro": 0.8556,
+        "por_classe": {
+          "baixa": {
+            "precision": 0.8505,
+            "recall": 0.9016,
+            "f1-score": 0.8753
+          },
+          "media": {
+            "precision": 0.8309,
+            "recall": 0.7644,
+            "f1-score": 0.7963
+          },
+          "alta": {
+            "precision": 0.8794,
+            "recall": 0.9115,
+            "f1-score": 0.8951
+          }
+        }
+      },
+      "importancia_atributos": {
+        "dias_ate_prazo": 0.4038,
+        "impacto": 0.3329,
+        "esforco_estimado": 0.1505,
+        "complexidade": 0.0964,
+        "categoria_trabalho": 0.0045,
+        "categoria_casa": 0.0032,
+        "categoria_pessoal": 0.0029,
+        "categoria_saude": 0.0029,
+        "categoria_estudo": 0.0029
+      }
+    },
+    "Random Forest": {
+      "melhores_parametros": {
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "n_estimators": 100
+      },
+      "f1_macro_validacao": 0.8461,
+      "teste": {
+        "acuracia": 0.8467,
+        "f1_macro": 0.8493,
+        "por_classe": {
+          "baixa": {
+            "precision": 0.861,
+            "recall": 0.8798,
+            "f1-score": 0.8703
+          },
+          "media": {
+            "precision": 0.8122,
+            "recall": 0.7689,
+            "f1-score": 0.79
+          },
+          "alta": {
+            "precision": 0.87,
+            "recall": 0.9062,
+            "f1-score": 0.8878
+          }
+        }
+      },
+      "importancia_atributos": {
+        "dias_ate_prazo": 0.5326,
+        "impacto": 0.2726,
+        "esforco_estimado": 0.1019,
+        "complexidade": 0.061,
+        "categoria_trabalho": 0.0084,
+        "categoria_estudo": 0.0077,
+        "categoria_pessoal": 0.0061,
+        "categoria_casa": 0.0055,
+        "categoria_saude": 0.0042
+      }
+    }
+  },
+  "escolhido": "Árvore de Decisão",
+  "base": {
+    "tarefas": 3000,
+    "treino": 2400,
+    "teste": 600,
+    "semente": 42,
+    "distribuicao": {
+      "media": 1125,
+      "alta": 960,
+      "baixa": 915
+    }
+  }
+}

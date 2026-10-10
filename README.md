@@ -45,4 +45,15 @@ cd web && npm install && npm run dev
 cd web && npm run lint && npm test
 cd api && ruff check . && pytest
 cd ml/service && ruff check . && pytest
+cd ml/training && ruff check . && pytest
 ```
+
+## Modelo de priorização
+
+A base mockada e o treino ficam em `ml/training`. Para gerar a base, treinar os três algoritmos e salvar o melhor modelo:
+
+```bash
+cd ml/training && pip install -r requirements-dev.txt && python -m treino.treinar
+```
+
+O resultado vai para `ml/models/` (modelo e metadados) e `docs/resultados/fase-1/` (métricas e matrizes de confusão). A análise completa está em `ml/notebooks/01_comparacao_modelos.ipynb`.
