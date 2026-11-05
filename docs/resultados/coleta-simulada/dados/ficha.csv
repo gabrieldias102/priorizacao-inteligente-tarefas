@@ -1,0 +1,102 @@
+participante,titulo,prioridade
+P01,Corrigir bug relatado pelo cliente,alta
+P01,Revisar pull request do colega,alta
+P01,Responder e-mails pendentes,alta
+P01,Preparar reunião de planejamento,alta
+P01,Planejar viagem do feriado,alta
+P01,Comprar presente de aniversário,alta
+P01,Fazer entrevista técnica,media
+P01,Entregar trabalho em grupo,media
+P01,Marcar consulta médica,baixa
+P01,Atualizar documentação do sistema,media
+P01,Enviar relatório semanal,baixa
+P01,Configurar ambiente de testes,media
+P02,Responder e-mails pendentes,alta
+P02,Consertar torneira,alta
+P02,Ligar para a família,alta
+P02,Estudar para a prova de estatística,alta
+P02,Fazer entrevista técnica,baixa
+P02,Corrigir bug relatado pelo cliente,media
+P02,Comprar presente de aniversário,media
+P02,Revisar pull request do colega,media
+P02,Configurar ambiente de testes,media
+P02,Atualizar documentação do sistema,alta
+P03,Fazer entrevista técnica,alta
+P03,Revisar anotações da aula,baixa
+P03,Marcar consulta médica,media
+P03,Responder e-mails pendentes,media
+P03,Fazer compras do mês,media
+P03,Fazer lista de exercícios,alta
+P03,Consertar torneira,alta
+P03,Preparar reunião de planejamento,alta
+P03,Escrever resumo do artigo,media
+P03,Renovar documento,alta
+P03,Ler capítulo do livro da disciplina,alta
+P03,Configurar ambiente de testes,media
+P04,Configurar ambiente de testes,alta
+P04,Entregar trabalho em grupo,alta
+P04,Comprar presente de aniversário,alta
+P04,Planejar viagem do feriado,media
+P04,Ligar para a família,alta
+P04,Ir à academia,media
+P04,Comprar remédio,alta
+P04,Estudar para a prova de estatística,media
+P04,Buscar resultado de exame,alta
+P04,Responder e-mails pendentes,baixa
+P04,Ler capítulo do livro da disciplina,alta
+P05,Fazer entrevista técnica,media
+P05,Renovar documento,baixa
+P05,Limpar a casa,alta
+P05,Escrever resumo do artigo,alta
+P05,Ligar para a família,media
+P05,Comprar remédio,media
+P05,Enviar relatório semanal,alta
+P05,Planejar viagem do feriado,alta
+P05,Buscar resultado de exame,alta
+P06,Marcar consulta médica,alta
+P06,Entregar trabalho em grupo,media
+P06,Comprar presente de aniversário,media
+P06,Fazer entrevista técnica,alta
+P06,Renovar documento,alta
+P06,Limpar a casa,media
+P06,Corrigir bug relatado pelo cliente,baixa
+P06,Lavar roupa,media
+P07,Fazer entrevista técnica,media
+P07,Entregar trabalho em grupo,alta
+P07,Fazer compras do mês,baixa
+P07,Atualizar documentação do sistema,media
+P07,Enviar relatório semanal,alta
+P07,Comprar remédio,alta
+P07,Marcar consulta médica,media
+P07,Escrever resumo do artigo,alta
+P07,Planejar viagem do feriado,media
+P07,Preparar reunião de planejamento,media
+P07,Pagar conta de luz,alta
+P07,Responder e-mails pendentes,alta
+P08,Pagar conta de luz,alta
+P08,Fazer lista de exercícios,media
+P08,Escrever resumo do artigo,media
+P08,Assistir aula gravada,media
+P08,Atualizar documentação do sistema,alta
+P08,Limpar a casa,alta
+P08,Ligar para a família,media
+P08,Responder e-mails pendentes,media
+P08,Fazer compras do mês,alta
+P08,Consertar torneira,media
+P09,Atualizar documentação do sistema,baixa
+P09,Ir à academia,baixa
+P09,Preparar reunião de planejamento,media
+P09,Buscar resultado de exame,alta
+P09,Fazer entrevista técnica,media
+P09,Ligar para a família,alta
+P09,Escrever resumo do artigo,alta
+P09,Ler capítulo do livro da disciplina,alta
+P10,Lavar roupa,media
+P10,Pagar fatura do cartão,alta
+P10,Preparar apresentação do seminário,baixa
+P10,Ligar para a família,alta
+P10,Organizar fotos do celular,baixa
+P10,Marcar consulta médica,alta
+P10,Planejar viagem do feriado,alta
+P10,Ir à academia,baixa
+P10,Renovar documento,baixa

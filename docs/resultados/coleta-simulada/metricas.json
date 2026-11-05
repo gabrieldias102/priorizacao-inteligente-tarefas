@@ -1,0 +1,771 @@
+{
+  "dados": "simulados",
+  "registros": {
+    "tarefas": 101,
+    "tarefas_sem_ficha": 0,
+    "taxa_aceitacao": {
+      "aceitas": 82,
+      "confirmadas": 100,
+      "valor": 0.82
+    },
+    "concordancia_cega": {
+      "n": 100,
+      "acuracia": 0.78,
+      "f1_macro": 0.7325,
+      "matriz": [
+        [
+          9,
+          5,
+          0
+        ],
+        [
+          6,
+          24,
+          7
+        ],
+        [
+          0,
+          4,
+          45
+        ]
+      ]
+    },
+    "concordancia_apos_sugestao": {
+      "n": 100,
+      "acuracia": 0.82,
+      "f1_macro": 0.7902,
+      "matriz": [
+        [
+          11,
+          4,
+          0
+        ],
+        [
+          4,
+          25,
+          6
+        ],
+        [
+          0,
+          4,
+          46
+        ]
+      ]
+    },
+    "ficha_x_confirmada": {
+      "n": 100,
+      "acuracia": 0.92,
+      "f1_macro": 0.9116,
+      "matriz": [
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          2,
+          32,
+          3
+        ],
+        [
+          0,
+          2,
+          47
+        ]
+      ]
+    },
+    "influencia": {
+      "sugestoes_que_contrariavam_a_ficha": 22,
+      "aceitas_assim_mesmo": 6,
+      "valor": 0.2727
+    },
+    "comparacao_base_simulada": {
+      "f1_macro_base": 0.856,
+      "f1_macro_cega": 0.7325,
+      "diferenca": -0.1235
+    },
+    "direcao_ajustes": {
+      "prazo": {
+        "2 a 3 dias": {
+          "tarefas": 23,
+          "subiu": 0,
+          "baixou": 3
+        },
+        "4 a 7 dias": {
+          "tarefas": 30,
+          "subiu": 3,
+          "baixou": 3
+        },
+        "8 a 14 dias": {
+          "tarefas": 20,
+          "subiu": 2,
+          "baixou": 2
+        },
+        "até 1 dia": {
+          "tarefas": 17,
+          "subiu": 0,
+          "baixou": 1
+        },
+        "mais de 14": {
+          "tarefas": 10,
+          "subiu": 3,
+          "baixou": 1
+        }
+      },
+      "impacto": {
+        "1": {
+          "tarefas": 4,
+          "subiu": 0,
+          "baixou": 0
+        },
+        "2": {
+          "tarefas": 9,
+          "subiu": 0,
+          "baixou": 2
+        },
+        "3": {
+          "tarefas": 38,
+          "subiu": 4,
+          "baixou": 2
+        },
+        "4": {
+          "tarefas": 33,
+          "subiu": 3,
+          "baixou": 3
+        },
+        "5": {
+          "tarefas": 16,
+          "subiu": 1,
+          "baixou": 3
+        }
+      },
+      "esforco": {
+        "até 1 h": {
+          "tarefas": 26,
+          "subiu": 2,
+          "baixou": 1
+        },
+        "até 2 h": {
+          "tarefas": 27,
+          "subiu": 1,
+          "baixou": 4
+        },
+        "até 4 h": {
+          "tarefas": 35,
+          "subiu": 3,
+          "baixou": 2
+        },
+        "até 8 h": {
+          "tarefas": 8,
+          "subiu": 2,
+          "baixou": 2
+        },
+        "mais de 8 h": {
+          "tarefas": 4,
+          "subiu": 0,
+          "baixou": 1
+        }
+      },
+      "categoria": {
+        "casa": {
+          "tarefas": 13,
+          "subiu": 0,
+          "baixou": 1
+        },
+        "estudo": {
+          "tarefas": 19,
+          "subiu": 2,
+          "baixou": 1
+        },
+        "pessoal": {
+          "tarefas": 20,
+          "subiu": 2,
+          "baixou": 2
+        },
+        "saude": {
+          "tarefas": 14,
+          "subiu": 2,
+          "baixou": 2
+        },
+        "trabalho": {
+          "tarefas": 34,
+          "subiu": 2,
+          "baixou": 4
+        }
+      },
+      "total": {
+        "tarefas": 100,
+        "subiu": 8,
+        "baixou": 10
+      }
+    },
+    "direcao_ficha": {
+      "prazo": {
+        "2 a 3 dias": {
+          "tarefas": 23,
+          "subiu": 0,
+          "baixou": 4
+        },
+        "4 a 7 dias": {
+          "tarefas": 30,
+          "subiu": 3,
+          "baixou": 3
+        },
+        "8 a 14 dias": {
+          "tarefas": 20,
+          "subiu": 2,
+          "baixou": 2
+        },
+        "até 1 dia": {
+          "tarefas": 17,
+          "subiu": 0,
+          "baixou": 2
+        },
+        "mais de 14": {
+          "tarefas": 10,
+          "subiu": 5,
+          "baixou": 1
+        }
+      },
+      "impacto": {
+        "1": {
+          "tarefas": 4,
+          "subiu": 0,
+          "baixou": 0
+        },
+        "2": {
+          "tarefas": 9,
+          "subiu": 0,
+          "baixou": 3
+        },
+        "3": {
+          "tarefas": 38,
+          "subiu": 5,
+          "baixou": 3
+        },
+        "4": {
+          "tarefas": 33,
+          "subiu": 4,
+          "baixou": 4
+        },
+        "5": {
+          "tarefas": 16,
+          "subiu": 1,
+          "baixou": 2
+        }
+      },
+      "esforco": {
+        "até 1 h": {
+          "tarefas": 26,
+          "subiu": 3,
+          "baixou": 3
+        },
+        "até 2 h": {
+          "tarefas": 27,
+          "subiu": 2,
+          "baixou": 3
+        },
+        "até 4 h": {
+          "tarefas": 35,
+          "subiu": 3,
+          "baixou": 4
+        },
+        "até 8 h": {
+          "tarefas": 8,
+          "subiu": 2,
+          "baixou": 1
+        },
+        "mais de 8 h": {
+          "tarefas": 4,
+          "subiu": 0,
+          "baixou": 1
+        }
+      },
+      "categoria": {
+        "casa": {
+          "tarefas": 13,
+          "subiu": 0,
+          "baixou": 2
+        },
+        "estudo": {
+          "tarefas": 19,
+          "subiu": 3,
+          "baixou": 1
+        },
+        "pessoal": {
+          "tarefas": 20,
+          "subiu": 3,
+          "baixou": 2
+        },
+        "saude": {
+          "tarefas": 14,
+          "subiu": 2,
+          "baixou": 3
+        },
+        "trabalho": {
+          "tarefas": 34,
+          "subiu": 2,
+          "baixou": 4
+        }
+      },
+      "total": {
+        "tarefas": 100,
+        "subiu": 10,
+        "baixou": 12
+      }
+    },
+    "utilidade": {
+      "sim": 73,
+      "avaliadas": 100,
+      "valor": 0.73,
+      "quando_aceita": 0.8171,
+      "quando_ajustada": 0.3333
+    },
+    "disponibilidade": {
+      "sem_sugestao": 1,
+      "tarefas": 101,
+      "valor": 0.0099
+    },
+    "confianca_media": {
+      "aceitas": 0.9012,
+      "ajustadas": 0.8052
+    }
+  },
+  "questionario": {
+    "sus": {
+      "por_participante": {
+        "P01": 82.5,
+        "P02": 77.5,
+        "P03": 67.5,
+        "P04": 62.5,
+        "P05": 87.5,
+        "P06": 82.5,
+        "P07": 75.0,
+        "P08": 77.5,
+        "P09": 70.0,
+        "P10": 72.5
+      },
+      "media": 75.5,
+      "mediana": 76.2,
+      "desvio": 7.6,
+      "minimo": 62.5,
+      "maximo": 87.5,
+      "acima_de_68": 8,
+      "participantes": 10
+    },
+    "likert_c": {
+      "C1": {
+        "aspecto": "Qualidade",
+        "mediana": 4.5,
+        "media": 4.4,
+        "concordam": 0.9,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 4,
+          "5": 5
+        }
+      },
+      "C2": {
+        "aspecto": "Qualidade",
+        "mediana": 4.0,
+        "media": 3.9,
+        "concordam": 0.7,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 3,
+          "4": 5,
+          "5": 2
+        }
+      },
+      "C3": {
+        "aspecto": "Compreensão",
+        "mediana": 4.0,
+        "media": 3.9,
+        "concordam": 0.7,
+        "distribuicao": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 4,
+          "5": 3
+        }
+      },
+      "C4": {
+        "aspecto": "Compreensão",
+        "mediana": 4.0,
+        "media": 4.3,
+        "concordam": 1.0,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 7,
+          "5": 3
+        }
+      },
+      "C5": {
+        "aspecto": "Confiança",
+        "mediana": 4.0,
+        "media": 3.8,
+        "concordam": 0.7,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 3,
+          "4": 6,
+          "5": 1
+        }
+      },
+      "C6": {
+        "aspecto": "Controle",
+        "mediana": 5.0,
+        "media": 4.7,
+        "concordam": 1.0,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 3,
+          "5": 7
+        }
+      },
+      "C7": {
+        "aspecto": "Utilidade",
+        "mediana": 4.0,
+        "media": 4.3,
+        "concordam": 1.0,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 7,
+          "5": 3
+        }
+      },
+      "C8": {
+        "aspecto": "Organização",
+        "mediana": 4.0,
+        "media": 3.8,
+        "concordam": 0.7,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 3,
+          "4": 6,
+          "5": 1
+        }
+      },
+      "C9": {
+        "aspecto": "Satisfação",
+        "mediana": 4.0,
+        "media": 4.0,
+        "concordam": 0.9,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 8,
+          "5": 1
+        }
+      },
+      "C10": {
+        "aspecto": "Satisfação",
+        "mediana": 4.0,
+        "media": 4.2,
+        "concordam": 0.9,
+        "distribuicao": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 6,
+          "5": 3
+        }
+      }
+    },
+    "perfil": {
+      "A1_faixa_etaria": {
+        "25 a 34": 6,
+        "18 a 24": 4
+      },
+      "A2_ocupacao": {
+        "estudante e profissional de tecnologia": 4,
+        "estudante": 3,
+        "profissional de tecnologia": 3
+      },
+      "A3_frequencia_lista": {
+        "todos os dias": 5,
+        "raramente": 3,
+        "algumas vezes por semana": 2
+      },
+      "A4_metodo_atual": {
+        "pelo que for mais rápido": 5,
+        "pela importância": 2,
+        "sem critério definido": 1,
+        "por um método como Matriz de Eisenhower ou GUT": 1,
+        "pelo prazo": 1
+      }
+    },
+    "abertas": {
+      "D1": [
+        [
+          "P01",
+          "Na tarefa de saúde, que para mim é prioridade mesmo sem prazo."
+        ],
+        [
+          "P02",
+          "Ajustei tarefas importantes com prazo longo, o sistema deixou como baixa."
+        ],
+        [
+          "P03",
+          "Quando a tarefa dependia de outra pessoa, o sistema não tinha como saber."
+        ],
+        [
+          "P04",
+          "Em tarefas rápidas que o sistema subiu, mas podiam esperar."
+        ],
+        [
+          "P05",
+          "Ajustei tarefas importantes com prazo longo, o sistema deixou como baixa."
+        ],
+        [
+          "P06",
+          "Ajustei tarefas importantes com prazo longo, o sistema deixou como baixa."
+        ],
+        [
+          "P07",
+          "Na tarefa de saúde, que para mim é prioridade mesmo sem prazo."
+        ],
+        [
+          "P08",
+          "Ajustei tarefas importantes com prazo longo, o sistema deixou como baixa."
+        ],
+        [
+          "P09",
+          "Na tarefa de saúde, que para mim é prioridade mesmo sem prazo."
+        ],
+        [
+          "P10",
+          "Em tarefas rápidas que o sistema subiu, mas podiam esperar."
+        ]
+      ],
+      "D2": [
+        [
+          "P01",
+          "Fizeram sentido, mas o esforço pesando a favor foi estranho."
+        ],
+        [
+          "P02",
+          "A maioria sim; a categoria aparecendo como motivo pareceu estranho."
+        ],
+        [
+          "P03",
+          "A maioria sim; a categoria aparecendo como motivo pareceu estranho."
+        ],
+        [
+          "P04",
+          "Sim, o prazo e o impacto explicaram bem."
+        ],
+        [
+          "P05",
+          "Fizeram sentido, mas o esforço pesando a favor foi estranho."
+        ],
+        [
+          "P06",
+          "Sim, o prazo e o impacto explicaram bem."
+        ],
+        [
+          "P07",
+          "A maioria sim; a categoria aparecendo como motivo pareceu estranho."
+        ],
+        [
+          "P08",
+          "Sim, o prazo e o impacto explicaram bem."
+        ],
+        [
+          "P09",
+          "Sim, gostei de ver os motivos em linguagem simples."
+        ],
+        [
+          "P10",
+          "Fizeram sentido, mas o esforço pesando a favor foi estranho."
+        ]
+      ],
+      "D3": [
+        [
+          "P01",
+          "A sugestão automática já ordenando a lista."
+        ],
+        [
+          "P02",
+          "Poder aceitar ou mudar a prioridade com um clique."
+        ],
+        [
+          "P03",
+          "Poder aceitar ou mudar a prioridade com um clique."
+        ],
+        [
+          "P04",
+          "Ser simples e rápido de cadastrar."
+        ],
+        [
+          "P05",
+          "Ser simples e rápido de cadastrar."
+        ],
+        [
+          "P06",
+          "A sugestão automática já ordenando a lista."
+        ],
+        [
+          "P07",
+          "Ser simples e rápido de cadastrar."
+        ],
+        [
+          "P08",
+          "Ver o motivo de cada prioridade."
+        ],
+        [
+          "P09",
+          "Ser simples e rápido de cadastrar."
+        ],
+        [
+          "P10",
+          "Ver o motivo de cada prioridade."
+        ]
+      ],
+      "D4": [
+        [
+          "P01",
+          "Lembretes perto do prazo."
+        ],
+        [
+          "P02",
+          "Nada, achei completo para o objetivo."
+        ],
+        [
+          "P03",
+          "Tarefas recorrentes."
+        ],
+        [
+          "P04",
+          "Tarefas recorrentes."
+        ],
+        [
+          "P05",
+          "Poder dizer que uma tarefa depende de outra."
+        ],
+        [
+          "P06",
+          "Lembretes perto do prazo."
+        ],
+        [
+          "P07",
+          "Nada, achei completo para o objetivo."
+        ],
+        [
+          "P08",
+          "Tarefas recorrentes."
+        ],
+        [
+          "P09",
+          "Poder dizer que uma tarefa depende de outra."
+        ],
+        [
+          "P10",
+          "Poder dizer que uma tarefa depende de outra."
+        ]
+      ]
+    }
+  },
+  "observacao": {
+    "ocorrencias": 30,
+    "por_tema": {
+      "confianca": 8,
+      "melhoria": 7,
+      "usabilidade": 6,
+      "discordancia": 6,
+      "clareza": 3
+    },
+    "participantes_por_tema": {
+      "clareza": 3,
+      "confianca": 8,
+      "discordancia": 6,
+      "melhoria": 7,
+      "usabilidade": 6
+    }
+  },
+  "por_participante": [
+    {
+      "participante": "P01",
+      "tarefas": 12,
+      "aceitacao": 0.75,
+      "concordancia_cega": 0.75,
+      "sus": 82.5
+    },
+    {
+      "participante": "P02",
+      "tarefas": 10,
+      "aceitacao": 0.7,
+      "concordancia_cega": 0.6,
+      "sus": 77.5
+    },
+    {
+      "participante": "P03",
+      "tarefas": 12,
+      "aceitacao": 0.8182,
+      "concordancia_cega": 0.7273,
+      "sus": 67.5
+    },
+    {
+      "participante": "P04",
+      "tarefas": 11,
+      "aceitacao": 1.0,
+      "concordancia_cega": 0.9091,
+      "sus": 62.5
+    },
+    {
+      "participante": "P05",
+      "tarefas": 9,
+      "aceitacao": 1.0,
+      "concordancia_cega": 1.0,
+      "sus": 87.5
+    },
+    {
+      "participante": "P06",
+      "tarefas": 8,
+      "aceitacao": 0.875,
+      "concordancia_cega": 0.875,
+      "sus": 82.5
+    },
+    {
+      "participante": "P07",
+      "tarefas": 12,
+      "aceitacao": 0.8333,
+      "concordancia_cega": 0.8333,
+      "sus": 75.0
+    },
+    {
+      "participante": "P08",
+      "tarefas": 10,
+      "aceitacao": 0.8,
+      "concordancia_cega": 0.7,
+      "sus": 77.5
+    },
+    {
+      "participante": "P09",
+      "tarefas": 8,
+      "aceitacao": 0.875,
+      "concordancia_cega": 1.0,
+      "sus": 70.0
+    },
+    {
+      "participante": "P10",
+      "tarefas": 9,
+      "aceitacao": 0.5556,
+      "concordancia_cega": 0.4444,
+      "sus": 72.5
+    }
+  ]
+}

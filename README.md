@@ -83,3 +83,7 @@ cd ml/training && pip install -r requirements-dev.txt && python -m treino.treina
 ```
 
 O resultado vai para `ml/models/` (modelo e metadados) e `docs/resultados/fase-1/` (métricas e matrizes de confusão). A análise completa está em `ml/notebooks/01_comparacao_modelos.ipynb`.
+
+## Coleta com usuários
+
+A exportação dos registros fica na API (`python -m app.exportar_coleta`), e a análise da coleta (medidas do Quadro 7, SUS, Likert) e o retreino do modelo (RF12) ficam em `ml/training/coleta`. Enquanto a coleta real não termina, `docs/resultados/coleta-simulada/` traz um exemplo completo com dados **simulados**, que não devem ser usados como resultado. O passo a passo com os dados reais está no README dessa pasta.

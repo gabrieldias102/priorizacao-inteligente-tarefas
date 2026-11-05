@@ -1,0 +1,93 @@
+{
+  "dados": "simulados",
+  "rotulo": "confirmada",
+  "peso_tarefas_coleta": 10,
+  "tarefas_coleta": 101,
+  "avaliacao": "deixa um participante de fora; teste na ficha cega",
+  "v1_na_ficha": {
+    "n": 101,
+    "acuracia": 0.7822,
+    "f1_macro": 0.7332,
+    "matriz": [
+      [
+        9,
+        5,
+        0
+      ],
+      [
+        6,
+        24,
+        7
+      ],
+      [
+        0,
+        4,
+        46
+      ]
+    ]
+  },
+  "v2_na_ficha": {
+    "n": 101,
+    "acuracia": 0.7921,
+    "f1_macro": 0.7641,
+    "matriz": [
+      [
+        10,
+        4,
+        0
+      ],
+      [
+        4,
+        25,
+        8
+      ],
+      [
+        0,
+        5,
+        45
+      ]
+    ]
+  },
+  "v1_base_mockada": {
+    "acuracia": 0.8267,
+    "f1_macro": 0.8284,
+    "por_classe": {
+      "baixa": {
+        "precision": 0.8471,
+        "recall": 0.8421,
+        "f1-score": 0.8446
+      },
+      "media": {
+        "precision": 0.8058,
+        "recall": 0.7249,
+        "f1-score": 0.7632
+      },
+      "alta": {
+        "precision": 0.8304,
+        "recall": 0.93,
+        "f1-score": 0.8774
+      }
+    }
+  },
+  "v2_base_mockada": {
+    "acuracia": 0.825,
+    "f1_macro": 0.8267,
+    "por_classe": {
+      "baixa": {
+        "precision": 0.8324,
+        "recall": 0.8421,
+        "f1-score": 0.8372
+      },
+      "media": {
+        "precision": 0.799,
+        "recall": 0.7293,
+        "f1-score": 0.7626
+      },
+      "alta": {
+        "precision": 0.844,
+        "recall": 0.92,
+        "f1-score": 0.8804
+      }
+    }
+  }
+}

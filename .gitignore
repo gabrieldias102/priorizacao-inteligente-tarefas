@@ -22,3 +22,7 @@ __pycache__/
 .DS_Store
 *.pem
 npm-debug.log*
+
+# Coleta real: dados com títulos e e-mails ficam fora do Git
+/coleta/
+participantes.csv

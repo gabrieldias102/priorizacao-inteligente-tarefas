@@ -5,7 +5,7 @@ target-version = "py312"
 select = ["E", "F", "I", "UP", "B"]
 
 [lint.isort]
-known-first-party = ["app", "treino"]
+known-first-party = ["app", "treino", "coleta"]
 
 [lint.per-file-ignores]
 "*.ipynb" = ["E402", "E501"]
