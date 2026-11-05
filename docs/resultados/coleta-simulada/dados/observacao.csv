@@ -1,0 +1,31 @@
+participante,momento,ocorrencia,tarefa,tema
+P01,uso guiado,Procurou um botão de editar no cartão antes de achar.,Atualizar documentação do sistema,usabilidade
+P01,uso guiado,Sugeriu poder ordenar a lista manualmente.,Corrigir bug relatado pelo cliente,melhoria
+P01,uso livre,Disse que o sistema não sabe que a tarefa depende de outra pessoa.,Corrigir bug relatado pelo cliente,discordancia
+P02,uso guiado,Hesitou para escolher a data do prazo no celular.,Revisar pull request do colega,usabilidade
+P02,uso guiado,Comentou que confiaria mais depois de usar por alguns dias.,Consertar torneira,confianca
+P02,uso livre,Sugeriu poder ordenar a lista manualmente.,Revisar pull request do colega,melhoria
+P03,uso guiado,Leu os motivos antes de aceitar e comentou que ajudam a decidir.,Fazer lista de exercícios,clareza
+P03,uso guiado,"Aceitou sem abrir os motivos, dizendo que confiava na sugestão.",Configurar ambiente de testes,confianca
+P03,uso guiado,Ajustou para alta dizendo que a tarefa era importante mesmo com prazo longo.,Fazer lista de exercícios,discordancia
+P04,uso guiado,Sugeriu marcar tarefas recorrentes.,Configurar ambiente de testes,melhoria
+P04,uso guiado,Hesitou para escolher a data do prazo no celular.,Comprar remédio,usabilidade
+P05,uso guiado,Estranhou 100% de confiança numa tarefa simples.,Enviar relatório semanal,confianca
+P05,uso livre,Cadastrou as tarefas sem dificuldade e rapidamente.,Ligar para a família,usabilidade
+P05,uso guiado,Disse que o sistema não sabe que a tarefa depende de outra pessoa.,Planejar viagem do feriado,discordancia
+P05,uso livre,Sugeriu marcar tarefas recorrentes.,Buscar resultado de exame,melhoria
+P06,uso guiado,Sugeriu marcar tarefas recorrentes.,Limpar a casa,melhoria
+P06,uso livre,"Abriu ""Por que essa prioridade?"" e disse que o motivo do prazo fazia sentido.",Renovar documento,clareza
+P06,uso guiado,Disse que o sistema não sabe que a tarefa depende de outra pessoa.,Renovar documento,discordancia
+P06,uso guiado,"Aceitou sem abrir os motivos, dizendo que confiava na sugestão.",Comprar presente de aniversário,confianca
+P07,uso guiado,"Aceitou sem abrir os motivos, dizendo que confiava na sugestão.",Fazer entrevista técnica,confianca
+P07,uso livre,Hesitou para escolher a data do prazo no celular.,Escrever resumo do artigo,usabilidade
+P08,uso livre,Comentou que confiaria mais depois de usar por alguns dias.,Assistir aula gravada,confianca
+P08,uso guiado,Cadastrou as tarefas sem dificuldade e rapidamente.,Limpar a casa,usabilidade
+P08,uso livre,Sugeriu poder ordenar a lista manualmente.,Fazer lista de exercícios,melhoria
+P08,uso livre,Baixou a prioridade de uma tarefa rápida que podia esperar.,Pagar conta de luz,discordancia
+P09,uso guiado,Ajustou para alta dizendo que a tarefa era importante mesmo com prazo longo.,Atualizar documentação do sistema,discordancia
+P09,uso guiado,"Aceitou sem abrir os motivos, dizendo que confiava na sugestão.",Atualizar documentação do sistema,confianca
+P10,uso guiado,"Abriu ""Por que essa prioridade?"" e disse que o motivo do prazo fazia sentido.",Organizar fotos do celular,clareza
+P10,uso livre,Sugeriu poder ordenar a lista manualmente.,Organizar fotos do celular,melhoria
+P10,uso livre,Estranhou 100% de confiança numa tarefa simples.,Ir à academia,confianca
